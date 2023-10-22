@@ -1,0 +1,25 @@
+.list {
+  ul {
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-weight: 100;
+      a {
+        box-sizing: border-box;
+        height: 100%;
+        text-decoration: none;
+        font-size: 1rem;
+        color: #6b7280;
+
+        &:hover {
+          color: #2f3542;
+        }
+
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

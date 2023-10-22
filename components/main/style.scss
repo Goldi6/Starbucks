@@ -1,0 +1,14 @@
+.main-block {
+  letter-spacing: 2px;
+
+  .block-text {
+    font-weight: lighter;
+  }
+}
+
+.small-card {
+  font-size: 19px !important;
+}
+.small-card > div > div > h1 {
+  font-size: 24px;
+}

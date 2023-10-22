@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: helvetica;
+  src: url("../public/SoDoSans-Regular.fb96a065.woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: helvetica;
+  src: url("../public/SoDoSans-Bold.49f6eaa3.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: helvetica;
+  src: url("../public/SoDoSans-SemiBold.6aebdeb6.woff");
+  font-weight: lighter;
+}
+@font-face {
+  font-family: sans-serif;
+  src: url("../public/Inter-latin.woff2");
+  font-weight: normal;
+}
+
+* {
+  font-family: "helvetica";
+  box-sizing: border-box;
+}
+html {
+  scrollbar-gutter: stable;
+  font-family: "helvetica";
+}
+
+footer * {
+  //font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: thin;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media screen and (min-width: var(--mediaTablet)) {
+  html {
+    font-size: 16px;
+  }
+}
+li {
+  list-style: none;
+}
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --modal-background-rgb: rgba(0, 0, 0, 0.38);
+}
+
+:root {
+  --globalNavHeightXs: 64px;
+  --globalNavHeightMobile: 72px;
+  --globalNavHeightTablet: 83px;
+  --globalNavHeightDesktop: 99px;
+
+  --globalNavPaddingX-Xs: 16px;
+  --globalNavPaddingY-Xs: 14px;
+  --globalNavPaddingX-Mobile: 16px;
+  --globalNavPaddingY-Mobile: 16px;
+  --globalNavPaddingX-Tablet: 24px;
+  --globalNavPaddingY-Tablet: 19px;
+  --globalNavPaddingX-Desktop: 40px;
+  --globalNavPaddingY-Desktop: 24px;
+
+  --nav-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.06),
+    0 0 2px rgba(0, 0, 0, 0.07);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+:root {
+  --mediaMobile: 640px;
+  --mediaTablet: 768px;
+  --mediaDesktop: 1024px;
+}
+
+@layer components {
+  .button {
+    @apply border border-solid rounded-3xl hover:bg-gray-900 hover:bg-opacity-[10%] text-base  font-bold py-[7px] px-4;
+  }
+
+  .main-nav {
+    @apply h-[--globalNavHeightXs] sm:h-[--globalNavHeightMobile] md:h-[--globalNavHeightTablet] lg:h-[--globalNavHeightDesktop];
+    z-index: 10;
+    box-shadow: var(--nav-shadow);
+    position: relative;
+    background: #fff;
+
+    padding: 0 var(--globalNavPaddingX-Xs);
+    #nav-logo {
+      margin-right: var(--globalNavPaddingX-Xs);
+      margin-top: var(--globalNavPaddingY-Xs);
+      margin-bottom: var(--globalNavPaddingY-Xs);
+    }
+    @media screen and (min-width: 640px) {
+      padding: 0 var(--globalNavPaddingX-Mobile);
+      #nav-logo {
+        margin-right: var(--globalNavPaddingX-Mobile);
+        margin-top: var(--globalNavPaddingY-Mobile);
+        margin-bottom: var(--globalNavPaddingY-Mobile);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      padding: 0 var(--globalNavPaddingX-Tablet);
+      #nav-logo {
+        margin-right: var(--globalNavPaddingX-Tablet);
+        margin-top: var(--globalNavPaddingY-Tablet);
+        margin-bottom: var(--globalNavPaddingY-Tablet);
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      #nav-logo {
+        margin-right: var(--globalNavPaddingX-Desktop);
+        margin-top: var(--globalNavPaddingY-Desktop);
+        margin-bottom: var(--globalNavPaddingY-Desktop);
+      }
+      padding: 0 var(--globalNavPaddingX-Desktop);
+    }
+  }
+}

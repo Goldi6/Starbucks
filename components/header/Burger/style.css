@@ -1,0 +1,189 @@
+
+:root {
+    --iconTransition: all ease-out 0.2s;
+    --colorTextBlackSoft:rgba(0,0,0,.58);
+}
+
+.sb-iconButton {
+    transition: all .2s ease-out;
+    transition: var(--iconTransition);
+    /* added */
+    display: grid;
+    place-content: center;
+    aspect-ratio: 1;
+    color:var(--colorTextBlackSoft)
+}
+
+.sb-iconButton:active {
+    transform: scale(.95)
+}
+
+.sb-iconButton .sb-icon-hover {
+    transition: all .2s ease-out;
+    transition: var(--iconTransition);
+    transform-origin: center;
+    transform: scale(.4);
+    fill: transparent;
+    opacity: .1
+}
+
+.sb-iconButton:active .sb-icon-hover {
+    opacity: .15
+}
+
+
+.sb-iconButton-highContrast {
+    background: var(--colorWhite);
+    opacity: .9;
+    border-radius: 50%
+}
+
+.sb-iconButton.sb-iconButton-highContrast:active {
+    transform: scale(.95)
+}
+
+@media (hover: hover) and (pointer:fine) {
+    .sb-iconButton:active .sb-icon-hover,.sb-iconButton:hover .sb-icon-hover {
+        transform:scale(1);
+        fill: currentColor
+    }
+
+    .sb-iconButton-highContrast:hover {
+        transform: scale(1.05);
+        opacity: 1
+    }
+}
+/* //hamburger */
+:root {
+    --duration: 0.4s;
+    --verticalDistance: 330%;
+    --negativeVerticalDistance: calc(-1 * var(--verticalDistance))
+}
+
+.sb-hamburgerButton-animation {
+    animation-duration: .4s;
+    animation-duration: var(--duration);
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--defaultAnimationEasing)
+}
+
+.sb-hamburgerButton-animation-outer-lines {
+    transform-box: fill-box;
+    transform-origin: center
+}
+
+.sb-hamburgerButton-topLine-OPEN {
+    transform: translateY(330%) rotate(-45deg);
+    transform: translateY(var(--verticalDistance)) rotate(-45deg)
+}
+
+.sb-hamburgerButton-middleLine-OPEN {
+    opacity: 0
+}
+
+.sb-hamburgerButton-bottomLine-OPEN {
+    transform: translateY(calc(-1 * 330%)) rotate(-135deg);
+    transform: translateY(var(--negativeVerticalDistance)) rotate(-135deg)
+}
+
+.sb-hamburgerButton-topLine-OPENING {
+    animation-name: topLineAnimation;
+    animation-direction: normal
+}
+
+.sb-hamburgerButton-middleLine-OPENING {
+    animation-name: middleLineAnimation;
+    animation-direction: normal
+}
+
+.sb-hamburgerButton-bottomLine-OPENING {
+    animation-name: bottomLineAnimation;
+    animation-direction: normal
+}
+
+.sb-hamburgerButton-topLine-CLOSED {
+    transform: translateY(0) rotate(0)
+}
+
+.sb-hamburgerButton-middleLine-CLOSED {
+    opacity: 1
+}
+
+.sb-hamburgerButton-bottomLine-CLOSED {
+    transform: translateY(0) rotate(0)
+}
+
+.sb-hamburgerButton-topLine-CLOSING {
+    animation-name: topLineAnimation;
+    animation-direction: reverse
+}
+
+.sb-hamburgerButton-middleLine-CLOSING {
+    animation-name: middleLineAnimation;
+    animation-direction: reverse
+}
+
+.sb-hamburgerButton-bottomLine-CLOSING {
+    animation-name: bottomLineAnimation;
+    animation-direction: reverse
+}
+
+@keyframes topLineAnimation {
+    0% {
+        transform: translateY(0) rotate(0)
+    }
+
+    33% {
+        transform: translateY(330%) rotate(0);
+        transform: translateY(var(--verticalDistance)) rotate(0)
+    }
+
+    66% {
+        transform: translateY(330%) rotate(90deg);
+        transform: translateY(var(--verticalDistance)) rotate(90deg)
+    }
+
+    to {
+        transform: translateY(330%) rotate(135deg);
+        transform: translateY(var(--verticalDistance)) rotate(135deg)
+    }
+}
+
+@keyframes middleLineAnimation {
+    0% {
+        opacity: 1
+    }
+
+    33% {
+        opacity: 1
+    }
+
+    34% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes bottomLineAnimation {
+    0% {
+        transform: translateY(0) rotate(0)
+    }
+
+    33% {
+        transform: translateY(calc(-1 * 330%)) rotate(0);
+        transform: translateY(var(--negativeVerticalDistance)) rotate(0)
+    }
+
+    66% {
+        transform: translateY(calc(-1 * 330%)) rotate(0);
+        transform: translateY(var(--negativeVerticalDistance)) rotate(0)
+    }
+
+    to {
+        transform: translateY(calc(-1 * 330%)) rotate(45deg);
+        transform: translateY(var(--negativeVerticalDistance)) rotate(45deg)
+    }
+}
