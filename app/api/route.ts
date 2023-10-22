@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 type Content = {
   id: string;
@@ -20,8 +20,8 @@ type obj = {
 type ResponseData = obj[];
 
 export async function GET(
-  request: NextApiRequest,
-  response: NextApiResponse<ResponseData>
+  request: Request | NextRequest,
+  response: Response | NextResponse
 ) {
   const data = [
     {
