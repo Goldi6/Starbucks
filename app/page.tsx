@@ -4,7 +4,7 @@ import Main from "@/components/Main";
 
 
 async function getData() {
-  const res = await fetch(process.env.URL + '/api')
+  const res = await fetch('http://localhost:3000/api')
   if (!res.ok) throw new Error(res.statusText)
   const data = await res.json();
   return data;
