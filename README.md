@@ -1,5 +1,5 @@
 # Main Page Starbucks clone with Next.js 
-Front mini project
+Frontend next.js assignment
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
